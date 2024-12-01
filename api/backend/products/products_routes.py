@@ -20,6 +20,9 @@ products = Blueprint('products', __name__)
 # and return them to the client
 @products.route('/products', methods=['GET'])
 def get_products():
+    
+    current_app.logger.info('In /p/products GET route')
+    
     query = '''
         SELECT  id, 
                 product_code, 

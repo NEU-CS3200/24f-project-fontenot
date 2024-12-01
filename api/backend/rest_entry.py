@@ -5,7 +5,9 @@ from backend.customers.customer_routes import customers
 from backend.products.products_routes import products
 from backend.simple.simple_routes import simple_routes
 import os
+import logging
 from dotenv import load_dotenv
+
 
 def create_app():
     app = Flask(__name__)
@@ -16,6 +18,12 @@ def create_app():
     # are available in this file.  See the MySQL setup 
     # commands below to see how they're being used.
     load_dotenv()
+
+    app.logger.setLevel(logging.INFO)
+    if not app.debug:
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(logging.INFO)
+        app.logger.addHandler(stream_handler)
 
     # secret key that will be used for securely signing the session 
     # cookie and can be used for any other security related needs by 
