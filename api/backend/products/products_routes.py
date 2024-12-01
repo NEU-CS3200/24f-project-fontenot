@@ -160,13 +160,7 @@ def add_new_product():
                               list_price)
         VALUES ('{name}', '{description}', '{category}', {str(price)})
     '''
-    # TODO: Make sure the version of the query above works properly
-    # Constructing the query
-    # query = 'insert into products (product_name, description, category, list_price) values ("'
-    # query += name + '", "'
-    # query += description + '", "'
-    # query += category + '", '
-    # query += str(price) + ')'
+ 
     current_app.logger.info(query)
 
     # executing and committing the insert statement 

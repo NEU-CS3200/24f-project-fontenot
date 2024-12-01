@@ -54,6 +54,9 @@ def AdminPageNav():
     st.sidebar.page_link(
         "pages/21_ML_Model_Mgmt.py", label="ML Model Management", icon="🏢"
     )
+    st.sidebar.page_link(
+        "pages/22_Add_Product.py", label="Add Product", icon="🧀"
+    )
 
 
 # --------------------------------Links Function -----------------------------------------------
